@@ -40,7 +40,7 @@ def upload_dir(dir_path=''):
         return _ex
 
 
-def insert_permission(email='Antonparallax@gmail.com',type='user',role='reader'):
+def insert_permission(email='Antonparallax@gmail.com', type='user',role='reader'):
     print(email)
     drive = GoogleDrive(gauth)
     folder = drive.CreateFile({'id': '1tkzHbBTS0APmmPhlZ6uITBQL6aE8keNV'})
