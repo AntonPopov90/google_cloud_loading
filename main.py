@@ -27,7 +27,7 @@ def upload_dir(dir_path=''):
         for file_name in os.listdir(dir_path):
             my_file = drive.CreateFile({
                 'parents': [
-                    {"id": '1tkzHbBTS0APmmPhlZ6uITBQL6aE8keNV'}
+                    {"id": 'your_id_from_google_apis'}
                 ],
                 'title': f'{file_name}',
                 'mimeType': 'image/jpeg'
@@ -40,10 +40,10 @@ def upload_dir(dir_path=''):
         return _ex
 
 
-def insert_permission(email='Antonparallax@gmail.com', type='user',role='reader'):
+def insert_permission(email='insert_your@gmail.com', type='user',role='reader'):
     print(email)
     drive = GoogleDrive(gauth)
-    folder = drive.CreateFile({'id': '1tkzHbBTS0APmmPhlZ6uITBQL6aE8keNV'})
+    folder = drive.CreateFile({'id': 'your_id_from_google_apis'})
     try:
         folder.InsertPermission({
             'value': email,   ##  вставляем имейл из принятого от ТГ сообщения
@@ -58,7 +58,7 @@ def insert_permission(email='Antonparallax@gmail.com', type='user',role='reader'
 
 def main():
     print(create_and_upload_file(file_name=f'{input_file}'))
-    print(upload_dir(dir_path='/home/anton/PycharmProjects/google_cloud_loading/x_files'))
+    print(upload_dir(dir_path='/your/directictory/for_input/files'))
     print(insert_permission())
 
 
